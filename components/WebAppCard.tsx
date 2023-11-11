@@ -9,7 +9,7 @@ type WebAppCardProps = {
 
 const WebAppCard: React.FC<WebAppCardProps> = ({ name, description, url, isPopular }) => {
   return (
-    <div className="p-5 mb-5 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 relative">
+    <div className="p-5 mb-5 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 relative w-full sm:w-1/2 lg:w-1/4">
       {isPopular && (
         <span className="absolute top-0 right-0 bg-red-500 text-white py-1 px-2 rounded-bl">Popular</span>
       )}

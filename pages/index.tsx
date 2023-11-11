@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-gray-100 dark:bg-gray-900">
       <Header search={search} setSearch={setSearch} filterPopular={filterPopular} setFilterPopular={setFilterPopular} />
-      <main className="p-10">
+      <main className="p-10 flex flex-wrap justify-around">
         {filteredWebApps.map((webApp, index) => (
           <WebAppCard key={index} {...webApp} isPopular={webApp.isPopular || false} />
         ))}
