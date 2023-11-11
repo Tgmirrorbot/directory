@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ search, setSearch, popular, setPopular 
       <h1 className="text-xl font-bold text-gray-900 dark:text-white">App Title</h1>
       <div className="flex items-center space-x-4 lg:space-x-10">
         <label className="flex items-center">
-          <span className="mr-2 text-gray-700">Popular</span>
+          <span className="mr-2 text-gray-700 dark:text-white">Popular</span>
           <input
             type="checkbox"
             checked={popular}
