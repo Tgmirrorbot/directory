@@ -1,17 +1,12 @@
 [
   {
     "name": "Web App 1",
-    "description": "This is a description for Web App 1",
+    "description": "This is a description for Web App 1.",
     "url": "https://webapp1.com"
   },
   {
     "name": "Web App 2",
-    "description": "This is a description for Web App 2",
+    "description": "This is a description for Web App 2.",
     "url": "https://webapp2.com"
-  },
-  {
-    "name": "Web App 3",
-    "description": "This is a description for Web App 3",
-    "url": "https://webapp3.com"
   }
 ]
