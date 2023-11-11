@@ -12,13 +12,6 @@ const Header: React.FC<HeaderProps> = ({ search, setSearch, filterPopular, setFi
     <header className="w-full p-5 flex justify-between items-center bg-white dark:bg-gray-800">
       <h1 className="text-xl font-bold text-gray-900 dark:text-white">GPTs</h1>
       <div className="flex items-center space-x-4 lg:space-x-10">
-        <input
-          type="text"
-          placeholder="Search..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="rounded-md p-2"
-        />
         <label className="flex items-center">
           <span>Popular</span>
           <input
@@ -28,6 +21,13 @@ const Header: React.FC<HeaderProps> = ({ search, setSearch, filterPopular, setFi
             className="ml-2"
           />
         </label>
+        <input
+          type="text"
+          placeholder="Search..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="rounded-md p-2 w-40"
+        />
       </div>
     </header>
   );
