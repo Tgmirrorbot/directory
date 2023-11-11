@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WebAppCard from '../components/WebAppCard';
@@ -11,11 +12,17 @@ type WebApp = {
 };
 
 export default function Home() {
+  const [search, setSearch] = useState('');
+
+  const filteredWebApps = (webApps as WebApp[]).filter((webApp) =>
+    webApp.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="min-h-screen flex flex-col justify-between bg-gray-100 dark:bg-gray-900">
-      <Header />
+      <Header search={search} setSearch={setSearch} />
       <main className="p-10">
-        {(webApps as WebApp[]).map((webApp, index) => (
+        {filteredWebApps.map((webApp, index) => (
           <WebAppCard key={index} {...webApp} isPopular={webApp.isPopular || false} />
         ))}
       </main>
