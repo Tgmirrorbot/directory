@@ -1,13 +1,18 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import WebAppCard from '../components/WebAppCard';
+import webApps from '../data/webApps.json';
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-    </main>
-  )
+    <div className="flex flex-col min-h-screen justify-between">
+      <Header />
+      <main className="p-10">
+        {webApps.map((webApp, index) => (
+          <WebAppCard key={index} {...webApp} />
+        ))}
+      </main>
+      <Footer />
+    </div>
+  );
 }
