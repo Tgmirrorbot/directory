@@ -1,1 +1,1 @@
-{"config":{"system_prompt":"","model":"gpt-4","temperature":0,"top_p":1,"framework":"nextjs-page-tailwind"},"prompts":[]}
+{"config":{"system_prompt":"","model":"gpt-4","temperature":0,"top_p":1,"framework":"nextjs-page-tailwind"},"prompts":[{"prompt":"give me next.js/tailwand code for directory listing site simple and cool looks one with light/dark mode , header , footer with twitter/github/producthunt logo\n\nalso make data in json like , name:, description , url:\n\nthats it and make look wise cool and amazing simple one","md5":"dc51cf38d6cafcb090405ac0f71d61f5"}]}
