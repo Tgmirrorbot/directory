@@ -8,7 +8,7 @@ type WebApp = {
   name: string;
   description: string;
   url: string;
-  popular: boolean;
+  isPopular: boolean;
 };
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
   const [popular, setPopular] = useState(false);
 
   const filteredWebApps = (webApps as WebApp[]).filter((webApp) =>
-    webApp.name.toLowerCase().includes(search.toLowerCase()) && (!popular || webApp.popular)
+    webApp.name.toLowerCase().includes(search.toLowerCase()) && (!popular || webApp.isPopular)
   );
 
   return (
