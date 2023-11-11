@@ -8,9 +8,9 @@ type WebAppCardProps = {
 
 const WebAppCard: React.FC<WebAppCardProps> = ({ name, description, url }) => {
   return (
-    <div className="border border-gray-200 rounded-lg p-5 mb-5">
-      <h2 className="text-xl font-bold mb-2">{name}</h2>
-      <p className="text-gray-600 mb-3">{description}</p>
+    <div className="p-5 mb-5 border border-gray-200 rounded-lg">
+      <h2 className="mb-2 text-xl font-bold">{name}</h2>
+      <p className="mb-3 text-gray-600">{description}</p>
       <a href={url} className="text-blue-500 hover:underline">Visit Site</a>
     </div>
   );
