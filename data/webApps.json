@@ -2,11 +2,33 @@
   {
     "name": "Web App 1",
     "description": "This is a description for Web App 1.",
-    "url": "https://webapp1.com"
+    "url": "https://webapp1.com",
+    "isPopular": true
   },
   {
     "name": "Web App 2",
     "description": "This is a description for Web App 2.",
     "url": "https://webapp2.com"
+  },
+  {
+    "name": "Web App 3",
+    "description": "This is a description for Web App 3.",
+    "url": "https://webapp3.com",
+    "isPopular": true
+  },
+  {
+    "name": "Web App 4",
+    "description": "This is a description for Web App 4.",
+    "url": "https://webapp4.com"
+  },
+  {
+    "name": "Web App 5",
+    "description": "This is a description for Web App 5.",
+    "url": "https://webapp5.com"
+  },
+  {
+    "name": "Web App 6",
+    "description": "This is a description for Web App 6.",
+    "url": "https://webapp6.com"
   }
 ]
