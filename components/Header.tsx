@@ -3,13 +3,24 @@ import React from 'react';
 type HeaderProps = {
   search: string;
   setSearch: (search: string) => void;
+  popular: boolean;
+  setPopular: (popular: boolean) => void;
 };
 
-const Header: React.FC<HeaderProps> = ({ search, setSearch }) => {
+const Header: React.FC<HeaderProps> = ({ search, setSearch, popular, setPopular }) => {
   return (
     <header className="w-full p-5 flex justify-between items-center bg-white dark:bg-gray-800">
       <h1 className="text-xl font-bold text-gray-900 dark:text-white">App Title</h1>
       <div className="flex items-center space-x-4 lg:space-x-10">
+        <label className="flex items-center">
+          <input
+            type="checkbox"
+            checked={popular}
+            onChange={(e) => setPopular(e.target.checked)}
+            className="form-checkbox h-5 w-5 text-blue-600"
+          />
+          <span className="ml-2 text-gray-700">Popular</span>
+        </label>
         <input
           type="text"
           placeholder="Search..."

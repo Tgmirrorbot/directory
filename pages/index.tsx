@@ -8,18 +8,20 @@ type WebApp = {
   name: string;
   description: string;
   url: string;
+  popular: boolean;
 };
 
 export default function Home() {
   const [search, setSearch] = useState('');
+  const [popular, setPopular] = useState(false);
 
   const filteredWebApps = (webApps as WebApp[]).filter((webApp) =>
-    webApp.name.toLowerCase().includes(search.toLowerCase())
+    webApp.name.toLowerCase().includes(search.toLowerCase()) && (!popular || webApp.popular)
   );
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-gray-100 dark:bg-gray-900">
-      <Header search={search} setSearch={setSearch} />
+      <Header search={search} setSearch={setSearch} popular={popular} setPopular={setPopular} />
       <main className="p-10 flex flex-wrap justify-around">
         {filteredWebApps.map((webApp, index) => (
           <WebAppCard key={index} {...webApp} />
