@@ -3,13 +3,20 @@ import Footer from '../components/Footer';
 import WebAppCard from '../components/WebAppCard';
 import webApps from '../data/webApps.json';
 
+type WebApp = {
+  name: string;
+  description: string;
+  url: string;
+  isPopular?: boolean;
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-gray-100 dark:bg-gray-900">
       <Header />
       <main className="p-10">
-        {webApps.map((webApp, index) => (
-          <WebAppCard key={index} {...webApp} />
+        {(webApps as WebApp[]).map((webApp, index) => (
+          <WebAppCard key={index} {...webApp} isPopular={webApp.isPopular || false} />
         ))}
       </main>
       <Footer />
