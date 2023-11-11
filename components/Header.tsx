@@ -3,24 +3,13 @@ import React from 'react';
 type HeaderProps = {
   search: string;
   setSearch: (search: string) => void;
-  filterPopular: boolean;
-  setFilterPopular: (filterPopular: boolean) => void;
 };
 
-const Header: React.FC<HeaderProps> = ({ search, setSearch, filterPopular, setFilterPopular }) => {
+const Header: React.FC<HeaderProps> = ({ search, setSearch }) => {
   return (
     <header className="w-full p-5 flex justify-between items-center bg-white dark:bg-gray-800">
       <h1 className="text-xl font-bold text-gray-900 dark:text-white">GPT</h1>
       <div className="flex items-center space-x-4 lg:space-x-10">
-        <label className="flex items-center">
-          <span>Popular</span>
-          <input
-            type="checkbox"
-            checked={filterPopular}
-            onChange={(e) => setFilterPopular(e.target.checked)}
-            className="ml-2"
-          />
-        </label>
         <input
           type="text"
           placeholder="Search..."
