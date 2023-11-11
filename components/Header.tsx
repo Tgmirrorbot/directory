@@ -10,7 +10,7 @@ type HeaderProps = {
 const Header: React.FC<HeaderProps> = ({ search, setSearch, filterPopular, setFilterPopular }) => {
   return (
     <header className="w-full p-5 flex justify-between items-center bg-white dark:bg-gray-800">
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-4 lg:space-x-10">
         <h1 className="text-xl font-bold text-gray-900 dark:text-white">GPTs</h1>
         <label className="flex items-center">
           <input
