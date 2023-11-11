@@ -5,7 +5,7 @@ import webApps from '../data/webApps.json';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen justify-between">
+    <div className="min-h-screen flex flex-col justify-between">
       <Header />
       <main className="p-10">
         {webApps.map((webApp, index) => (
