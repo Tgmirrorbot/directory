@@ -9,7 +9,7 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({ search, setSearch, popular, setPopular }) => {
   return (
-    <header className="w-full p-5 flex justify-between items-center bg-transparent">
+    <header className="flex justify-between items-center w-full p-5 bg-transparent">
       <h1 className="text-xl font-bold text-gray-900 dark:text-white">GPTsZone</h1>
       <div className="flex items-center space-x-4 lg:space-x-10">
         <label className="flex items-center">
@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({ search, setSearch, popular, setPopular 
             type="checkbox"
             checked={popular}
             onChange={(e) => setPopular(e.target.checked)}
-            className="form-checkbox h-5 w-5 text-blue-600"
+            className="h-5 w-5 text-blue-600 form-checkbox"
           />
         </label>
         <input
@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ search, setSearch, popular, setPopular 
           placeholder="Search..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="rounded-md p-2 w-40"
+          className="w-40 p-2 rounded-md"
         />
       </div>
     </header>

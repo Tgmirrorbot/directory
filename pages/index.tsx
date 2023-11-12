@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WebAppCard from '../components/WebAppCard';
 import webApps from '../data/webApps.json';
+import Image from 'next/image';
 
 type WebApp = {
   name: string;
@@ -20,7 +21,7 @@ export default function Home() {
   );
 
   return (
-    <div className="flex flex-col justify-between">
+    <div className="flex flex-col justify-between min-h-screen">
       <Header search={search} setSearch={setSearch} popular={popular} setPopular={setPopular} />
       <main className="p-10 flex flex-wrap justify-center min-h-[50vh]">
         {filteredWebApps.length > 0 ? (
@@ -28,8 +29,11 @@ export default function Home() {
             <WebAppCard key={index} {...webApp} />
           ))
         ) : (
-          <div className="w-full flex justify-center items-center">
-            <h2 className="text-2xl text-gray-700 dark:text-white">404 - Not Found</h2>
+          <div className="w-full flex flex-col justify-center items-center text-center space-y-4">
+            <h2 className="text-4xl text-gray-700 dark:text-white">404</h2>
+            <p className="text-xl text-gray-500 dark:text-gray-300">Oops! We couldn&apos;t find what you were looking for.</p>
+            <Image src="https://i.imgur.com/qIufhof.png" alt="Not Found" width={500} height={500} />
+            <button className="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600">Go Home</button>
           </div>
         )}
       </main>
