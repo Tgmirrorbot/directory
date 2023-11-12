@@ -13,7 +13,7 @@ const WebAppCard: React.FC<WebAppCardProps> = ({ name, description, url, isPopul
       {isPopular && <span role="img" aria-label="fire" className="absolute top-2 right-2">🔥</span>}
       <h2 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">{name}</h2>
       <p className="mb-3 text-gray-600 dark:text-gray-300">{description}</p>
-      <a href={url} className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 dark:text-white">Visit Site</a>
+      <a href={url} className="px-3 py-1 text-sm text-white bg-blue-500 rounded-full hover:bg-blue-600 dark:text-white">Visit Site</a>
     </div>
   );
 };
