@@ -15,7 +15,7 @@ const Footer = () => {
           <FaProductHunt size={24} className="text-gray-500 dark:text-white hover:text-orange-500" />
         </a>
       </div>
-      <p className="text-sm ml-4">© 2023 Discover Web App. All rights reserved.</p>
+      <p className="text-sm ml-4">© 2023 GPTsZone. All rights reserved.</p>
     </footer>
   );
 };
