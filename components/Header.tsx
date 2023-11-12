@@ -10,7 +10,7 @@ type HeaderProps = {
 const Header: React.FC<HeaderProps> = ({ search, setSearch, popular, setPopular }) => {
   return (
     <header className="w-full p-5 flex justify-between items-center bg-transparent">
-      <h1 className="text-xl font-bold text-gray-900 dark:text-white">GPT Zone</h1>
+      <h1 className="text-xl font-bold text-gray-900 dark:text-white">GPTsZone</h1>
       <div className="flex items-center space-x-4 lg:space-x-10">
         <label className="flex items-center">
           <span className="mr-2 text-gray-700 dark:text-white">Popular</span>
