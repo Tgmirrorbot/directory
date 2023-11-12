@@ -2,11 +2,13 @@ import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WebAppCard from '../components/WebAppCard';
+import Popup from '../components/Popup';
 import webApps from '../data/webApps.json';
 
 type WebApp = {
   name: string;
   description: string;
+  longDescription: string;
   url: string;
   isPopular: boolean;
 };
@@ -14,6 +16,7 @@ type WebApp = {
 export default function Home() {
   const [search, setSearch] = useState('');
   const [popular, setPopular] = useState(false);
+  const [popup, setPopup] = useState<WebApp | null>(null);
 
   const filteredWebApps = (webApps as WebApp[]).filter((webApp) =>
     webApp.name.toLowerCase().includes(search.toLowerCase()) && (!popular || webApp.isPopular)
@@ -25,7 +28,7 @@ export default function Home() {
       <main className="flex flex-wrap justify-center p-10 min-h-[50vh]">
         {filteredWebApps.length > 0 ? (
           filteredWebApps.map((webApp, index) => (
-            <WebAppCard key={index} {...webApp} />
+            <WebAppCard key={index} {...webApp} openPopup={() => setPopup(webApp)} />
           ))
         ) : (
           <div className="flex flex-col items-center justify-center space-y-4 text-center w-full">
@@ -34,6 +37,7 @@ export default function Home() {
           </div>
         )}
       </main>
+      {popup && <Popup {...popup} closePopup={() => setPopup(null)} />}
       <Footer />
     </div>
   );
