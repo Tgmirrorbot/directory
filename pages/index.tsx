@@ -23,9 +23,15 @@ export default function Home() {
     <div className="flex flex-col justify-between">
       <Header search={search} setSearch={setSearch} popular={popular} setPopular={setPopular} />
       <main className="p-10 flex flex-wrap justify-center min-h-[50vh]">
-        {filteredWebApps.map((webApp, index) => (
-          <WebAppCard key={index} {...webApp} />
-        ))}
+        {filteredWebApps.length > 0 ? (
+          filteredWebApps.map((webApp, index) => (
+            <WebAppCard key={index} {...webApp} />
+          ))
+        ) : (
+          <div className="w-full flex justify-center items-center">
+            <h2 className="text-2xl text-gray-700 dark:text-white">404 - Not Found</h2>
+          </div>
+        )}
       </main>
       <Footer />
     </div>
