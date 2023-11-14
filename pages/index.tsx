@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { createClient } from '@supabase/supabase-js';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WebAppCard from '../components/WebAppCard';
 import Popup from '../components/Popup';
-import webApps from '../data/webApps.json';
 
 type WebApp = {
   name: string;
@@ -17,8 +17,26 @@ export default function Home() {
   const [search, setSearch] = useState('');
   const [popular, setPopular] = useState(false);
   const [popup, setPopup] = useState<WebApp | null>(null);
+  const [webApps, setWebApps] = useState<WebApp[]>([]);
 
-  const filteredWebApps = (webApps as WebApp[]).filter((webApp) =>
+  const supabaseUrl = 'https://xyzcompany.supabase.co';
+  const supabaseKey = 'public-anon-key';
+  const supabase = createClient(supabaseUrl, supabaseKey);
+
+  useEffect(() => {
+    fetchWebApps();
+  }, []);
+
+  const fetchWebApps = async () => {
+    let { data: webApps, error } = await supabase
+      .from('webApps')
+      .select('*');
+
+    if (error) console.error('Error loading web apps', error);
+    else if (webApps) setWebApps(webApps);
+  };
+
+  const filteredWebApps = webApps.filter((webApp) =>
     webApp.name.toLowerCase().includes(search.toLowerCase()) && (!popular || webApp.isPopular)
   );
 
